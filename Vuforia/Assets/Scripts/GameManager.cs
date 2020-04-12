@@ -161,6 +161,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         foreach (PlayerController player in players)
         {
             player.Turn = !player.Turn;
+            player.actionCount = 0;
             player.setTurn(player.Turn);
             foreach (Transform child in player.gameObject.transform)
             {

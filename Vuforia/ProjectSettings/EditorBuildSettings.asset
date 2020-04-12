@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GuardVFX/GuardMenu.unity
-    guid: ffee49a01d42469498bcebcf7490a9d2
+    path: Assets/Scenes/Menu.unity
+    guid: edad5e58163854c4da03ea0eee715023
   - enabled: 1
-    path: Assets/Scenes/GuardVFX/GuardGame.unity
-    guid: f16ef50b1ab21174d933cc7d2e49d60c
+    path: Assets/Scenes/MasterScene.unity
+    guid: 9b81f4131ee1ef5498d869143fb17e99
+  - enabled: 1
+    path: Assets/Scenes/Gallery.unity
+    guid: 5f3b04a44342b8242a875709f48cd123
   m_configObjects: {}
