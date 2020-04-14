@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public GameObject action1;
     public GameObject action2;
 
+    public bool botHasMoved;
+
     //GameOver
     public bool hasChildren = true;
     public bool winner = true;
@@ -219,6 +221,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             action1.GetComponent<Image>().color = Color.grey;
             action2.GetComponent<Image>().color = Color.grey;
+            botHasMoved = true;
         }
     }
 
@@ -347,7 +350,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public void CheckTurn()
     {
         if (photonPlayer == PhotonNetwork.LocalPlayer)
-        //EndTurnButton.interactable = Turn;
         {
             foreach (Transform text in EndTurnButton.transform)
             {

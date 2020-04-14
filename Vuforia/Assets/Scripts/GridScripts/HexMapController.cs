@@ -116,7 +116,15 @@ public class HexMapController : MonoBehaviour
                 debugString = "[TOUCH PHASE ENDED]";
                 previousCell = currentCell;
                 currentCell = null;
-                hexGrid.DoMove(selectedBot);
+                if (!selectedBot.transform.parent.GetComponent<PlayerController>().botHasMoved)
+                {
+                    hexGrid.DoMove(selectedBot);
+                }
+                else
+                {
+                    hexGrid.DisableAllHighlights();
+                    hexGrid.ClearPath();
+                }
                 isMoving = false;
                 break;
         }
@@ -151,8 +159,16 @@ public class HexMapController : MonoBehaviour
         }
         else if(Input.GetMouseButtonUp(0))
         {
-            previousClick = false;
-            hexGrid.DoMove(selectedBot);
+            previousClick = false; 
+            if (!selectedBot.transform.parent.GetComponent<PlayerController>().botHasMoved)
+            {
+                hexGrid.DoMove(selectedBot);
+            }
+            else
+            {
+                hexGrid.DisableAllHighlights();
+                hexGrid.ClearPath();
+            }
         }
     }
 

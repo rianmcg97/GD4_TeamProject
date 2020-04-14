@@ -416,8 +416,6 @@ public class BotController : MonoBehaviourPunCallbacks
         GameObject bot = GameObject.Find(botName);
         BotController target = bot.GetComponent<BotController>();
         target.guardMode = true;
-        
-        transform.parent.GetComponent<PlayerController>().actionCount++;
     }
 
     [PunRPC]
