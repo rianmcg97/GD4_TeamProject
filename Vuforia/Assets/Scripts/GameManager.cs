@@ -162,12 +162,13 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             player.Turn = !player.Turn;
             player.actionCount = 0;
-            player.botHasMoved = !player.botHasMoved;
+            player.botHasMoved = false;
             player.setTurn(player.Turn);
             foreach (Transform child in player.gameObject.transform)
             {
                 child.GetComponent<BotController>().isSelected = false;
                 child.GetComponent<BotController>().attackingMode = false;
+
                 child.GetComponent<BotController>().ResetAllMode();
             }
 
