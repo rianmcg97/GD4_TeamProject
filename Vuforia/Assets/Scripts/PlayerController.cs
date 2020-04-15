@@ -121,6 +121,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         operatorObject = GameObject.Find("Operator").gameObject;
         GameObject attackDebug = GameObject.Find("AttackDebug").gameObject;
         attackBubbleChat = new ActionPanel(attackDebug, attackDebug.transform.position, attackDebug.transform.localScale, false, 5);
+        botHasMoved = false;
 
         endText = endScreen.transform.Find("Text").GetComponent<Text>();
 
