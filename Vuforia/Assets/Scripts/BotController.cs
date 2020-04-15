@@ -416,8 +416,6 @@ public class BotController : MonoBehaviourPunCallbacks
         GameObject bot = GameObject.Find(botName);
         BotController target = bot.GetComponent<BotController>();
         target.guardMode = true;
-        
-        transform.parent.GetComponent<PlayerController>().actionCount++;
     }
 
     [PunRPC]
@@ -439,7 +437,6 @@ public class BotController : MonoBehaviourPunCallbacks
             target.attackedSparks.Play();
 
         //print(target.health);
-
         //Half damage taken if player has entered guard
         if (target.guardMode && normalDamage > 0)
         {
@@ -549,7 +546,7 @@ public class BotController : MonoBehaviourPunCallbacks
                             photonView.RPC("StartDamage", RpcTarget.All, hit.transform.name, 0.0f, -30.0f);
                         specialAbilityUsed = true;
                         playerScript.EndTurn();
-                   }                                    
+                    }
                 }
             }
         }
@@ -600,7 +597,7 @@ public class BotController : MonoBehaviourPunCallbacks
 
         StartCoroutine(DespawnSphere(sphere));
         specialAbilityUsed = true;
-        transform.parent.GetComponent<PlayerController>().actionCount++;
+        transform.parent.GetComponent<PlayerController>().actionCount = 2;
 
     }
 
